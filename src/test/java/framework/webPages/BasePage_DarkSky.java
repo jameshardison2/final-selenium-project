@@ -6,18 +6,16 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 
-import stepdefinition.SharedSD;
+import stepdefinition.SharedSd_DarkSkySD;
 
 import java.time.Duration;
 
-/**
- * Created by mohammadmuntakim
- */
-public class BasePage {
+
+public class BasePage_DarkSky {
 
 	// This is the most common wait function used in selenium
 	public static WebElement webAction(final By locator) {
-		Wait<WebDriver> wait = new FluentWait<WebDriver>(SharedSD.getDriver())
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(SharedSd_DarkSkySD.getDriver())
 				.withTimeout(Duration.ofSeconds(15))
 				.pollingEvery(Duration.ofSeconds(1))
 				.ignoring(NoSuchElementException.class)
@@ -68,4 +66,7 @@ public class BasePage {
 		//select element by index
 		selectMonth.selectByIndex(index);
 	}
+
+
+
 }

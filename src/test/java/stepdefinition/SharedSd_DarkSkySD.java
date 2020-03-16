@@ -2,26 +2,30 @@ package stepdefinition;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import org.openqa.selenium.support.pagefactory.ByAll;
 import util.ConfigReader;
 
-public class SharedSD {
+public class SharedSd_DarkSkySD {
 
-	private static WebDriver driver = null;
+	private static WebDriver driver;
+	//private static String url = "https://darksky.net/dev/register";
 
 	@Before("@web")
 	public static void before() {
 
 		ConfigReader configReader = new ConfigReader();
-		System.setProperty("webdriver.chrome.driver",
-				configReader.getChromeDriverPath());
+		System.setProperty("webdriver.chrome.driver", configReader.getChromeDriverPath());
 		driver = new ChromeDriver();
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get(configReader.getUrl());
+		driver.findElement(new ByAll(By.className("minTemp"),By.className("day revealed")));
+		//driver.get(url);
 	}
 
 	@After("@web")
