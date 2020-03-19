@@ -2,6 +2,7 @@ package framework.webPages;
 
 import com.google.common.base.Function;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
@@ -12,6 +13,18 @@ import java.time.Duration;
 
 
 public class BasePage_DarkSky {
+
+//Locators
+
+	public void clickOn(By locator) {
+		webAction(locator).click();
+	}
+
+	//public Actions actions = new Actions(driver);
+
+
+
+//Methods
 
 	// This is the most common wait function used in selenium
 	public static WebElement webAction(final By locator) {
@@ -33,9 +46,10 @@ public class BasePage_DarkSky {
 		return element;
 	}
 
-	public void clickOn(By locator) {
-		webAction(locator).click();
-	}
+
+
+
+
 
 	public void setValue(By locator, String value) {
 		webAction(locator).sendKeys(value);
