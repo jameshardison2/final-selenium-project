@@ -1,18 +1,17 @@
 package framework.webPages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.pagefactory.ByChained;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class LandingPage_DarkSky extends BasePage_DarkSky {
+public class DarkSky_LandingPage extends BasePage {
 
 
     //Locators
 
-    //Timeline
+      //Timeline
     private By nowHourTimeLine = By.xpath("//span[@class='Now']");
     private By fourPmHourTimeLine = By.xpath("//span[@class='4pm']");
     private By sixPmHourTimeLine = By.xpath("//span[@class='6pm']");
@@ -26,7 +25,7 @@ public class LandingPage_DarkSky extends BasePage_DarkSky {
     private By tenAmHourTimeLine = By.xpath("//span[@class='10am']");
     private By twelvePmHourTimeLine = By.xpath("//span[@class='6pm']");
 
-    //Menu Tab
+      //Menu Tab
     private By darkSkyApiButton = By.xpath("//div[@class='inner']//a[contains(text(),'Dark Sky API')]");
 
     //Today High Low expand
@@ -50,7 +49,7 @@ public class LandingPage_DarkSky extends BasePage_DarkSky {
     public void clickOnApiButton() {
         clickOn(darkSkyApiButton);
     }
-
+    // Click
     public void clickOnOpenTodayTimeline() {
         webAction(openTodayIcon);
     }
@@ -87,7 +86,7 @@ public class LandingPage_DarkSky extends BasePage_DarkSky {
 
     public class TwoHourTimeLineSd_DarkSky {
 
-        private LandingPage_DarkSky landingPageDarkSky = new LandingPage_DarkSky();
+        private DarkSky_LandingPage landingPageDarkSky = new DarkSky_LandingPage();
 
         public void selectCurrentTime() {
             SimpleDateFormat sdf = new SimpleDateFormat("hh");
@@ -101,11 +100,11 @@ public class LandingPage_DarkSky extends BasePage_DarkSky {
 
         // create an ArrayList using java system time
         ArrayList<String> systemTime = new ArrayList<String>();
-            systemTime.add("now");
+         //   systemTime.add("now");
 
         public void addCurrentHoursToArrayList(){
-            for (int b = 1, b < 13, b++)
-                if (
+            //for (int b = 1, b < 13, b++)
+            //    if (
 
 
         }
@@ -129,9 +128,6 @@ public class LandingPage_DarkSky extends BasePage_DarkSky {
             webTimeLine.add("8am");
             webTimeLine.add("10am");
             System.out.println(webTimeLine);
-
-
-
 
 
             System.out.println(systemTime);

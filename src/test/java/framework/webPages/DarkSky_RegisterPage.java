@@ -2,9 +2,7 @@ package framework.webPages;
 
 import org.openqa.selenium.By;
 
-import java.sql.Driver;
-
-public class RegisterPage_DarkSky extends BasePage_DarkSky {
+public class DarkSky_RegisterPage extends BasePage {
 
     public long getPageHeader;
 

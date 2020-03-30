@@ -10,14 +10,14 @@ import org.junit.runner.RunWith;
         plugin = {"pretty", "html:target/site/cucumber-pretty"},
         //This create auto method name in camelCase
         snippets = cucumber.api.SnippetType.CAMELCASE,
-        
         //Path to your feature file
         features = {"src/test/resources/features"},
         // Specify tags to be executed
-        tags = {"@timelineDarkSky-1"},
-        //Specify step definition package name (Note: make sure to have this package on current directory) 
+        tags = {"@searchResults2"},
+        //Specify  step definition package name (Note: make sure to have this package on current directory)
         glue = {"stepdefinition"}
 )
-public class TestRunner_DarkSky {
+public class TestRunner {
+
 	
 }

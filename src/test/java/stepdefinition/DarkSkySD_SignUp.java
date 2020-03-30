@@ -3,20 +3,20 @@ package stepdefinition;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import framework.webPages.ApiPage_DarkSky;
-import framework.webPages.LandingPage_DarkSky;
-import framework.webPages.RegisterPage_DarkSky;
+import framework.webPages.DarkSky_ApiPage;
+import framework.webPages.DarkSky_LandingPage;
+import framework.webPages.DarkSky_RegisterPage;
 import org.testng.Assert;
 
-public class SignUp_DarkSkySD {
+public class DarkSkySD_SignUp {
 
-    private LandingPage_DarkSky landingPage_darkSky = new LandingPage_DarkSky();
-    private ApiPage_DarkSky apiPage_darkSky = new ApiPage_DarkSky();
-    private RegisterPage_DarkSky darkSkyRegisterPage = new RegisterPage_DarkSky();
+    private DarkSky_LandingPage landingPage_darkSky = new DarkSky_LandingPage();
+    private DarkSky_ApiPage _darkSkyApiPage = new DarkSky_ApiPage();
+    private DarkSky_RegisterPage darkSkyRegisterPage = new DarkSky_RegisterPage();
 
     @Given("^I am on the landing page$")
     public void iAmOnLandingPage() {
-        Assert.assertEquals(SharedSd_DarkSkySD.getDriver().getTitle(),"Dark Sky - Broadway, New York, NY", "Invalid Register Page");
+        Assert.assertEquals(SharedSD.getDriver().getTitle(),"Dark Sky - Broadway, New York, NY", "Invalid Register Page");
     }
 
     @When( "^I click on (api) button on landing page$")
@@ -26,7 +26,7 @@ public class SignUp_DarkSkySD {
 
     @When("^I click on (sign up) button on api page$")
     public void clickSignUpButton(String button){
-        apiPage_darkSky.clickSignUpButton();
+        _darkSkyApiPage.clickSignUpButton();
     }
 
     @When("^I click on (register button) on register page$")
@@ -36,7 +36,7 @@ public class SignUp_DarkSkySD {
 
     @Then("^I verify that i am on register page by asserting register header$")
     public void verifyHeader(){
-        Assert.assertEquals(SharedSd_DarkSkySD.getDriver().getTitle(),"Dark Sky API: Register","Invalid Sign Up Page");
+        Assert.assertEquals(SharedSD.getDriver().getTitle(),"Dark Sky API: Register","Invalid Sign Up Page");
 
     }
 

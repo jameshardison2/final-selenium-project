@@ -2,33 +2,29 @@ package framework.webPages;
 
 import com.google.common.base.Function;
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
-
-import stepdefinition.SharedSd_DarkSkySD;
-
+import org.openqa.selenium.Keys;
+import stepdefinition.SharedSD;
 import java.time.Duration;
 
 
-public class BasePage_DarkSky {
+public class BasePage {
 
-//Locators
-
+//Methods
+	//enter text into fields and click
+	public void enterText(By locator){
+		webAction(locator).sendKeys("new york");
+		webAction(locator).sendKeys(Keys.RETURN);
+	}
 	public void clickOn(By locator) {
 		webAction(locator).click();
 	}
 
-	//public Actions actions = new Actions(driver);
-
-
-
-//Methods
-
 	// This is the most common wait function used in selenium
 	public static WebElement webAction(final By locator) {
-		Wait<WebDriver> wait = new FluentWait<WebDriver>(SharedSd_DarkSkySD.getDriver())
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(SharedSD.getDriver())
 				.withTimeout(Duration.ofSeconds(15))
 				.pollingEvery(Duration.ofSeconds(1))
 				.ignoring(NoSuchElementException.class)
@@ -42,13 +38,8 @@ public class BasePage_DarkSky {
 				return driver.findElement(locator);
 			}
 		});
-
 		return element;
 	}
-
-
-
-
 
 
 	public void setValue(By locator, String value) {
@@ -67,6 +58,8 @@ public class BasePage_DarkSky {
 		return webAction(locator).isSelected();
 	}
 
+
+	//Select from drop-downs
 	public void selectFromDropdown(By locator, String dropdownText) {
 		WebElement month = webAction(locator);
 		Select selectMonth = new Select(month);

@@ -2,7 +2,7 @@ package framework.webPages;
 
 import org.openqa.selenium.By;
 
-public class ApiPage_DarkSky extends BasePage_DarkSky {
+public class DarkSky_ApiPage extends BasePage {
 
     //Locators
       //Sign Up locator
